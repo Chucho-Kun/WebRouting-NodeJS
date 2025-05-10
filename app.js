@@ -1,19 +1,20 @@
-import express from 'express'
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+import express from 'express'
 const app = express()
 
 app.use( express.static( 'public' ) );
-
-app.get('/', (req, res) => {
-  res.send('Pagina principal')
-})
 
 app.get('/hola-mundo', (req, res) => {
     res.send('pagina de hola mundo')
   })
 
   app.get('*', (req, res) => {
-    res.send('404 ! Pagina no encontrada')
+    res.sendFile( __dirname + '/public/404.html' );
   })
 
 app.listen(8080)
