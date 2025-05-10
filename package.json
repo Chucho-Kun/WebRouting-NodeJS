@@ -1,0 +1,19 @@
+{
+    "name": "web-service-node",
+    "version": "1.0.0",
+    "description": "Desarrollo de un WebServices en Node",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js",
+        "test": "echo \"Error: no se han definido pruebas\" && exit 1"
+    },
+    "keywords": [],
+    "author": "Jesus Peralta",
+    "license": "MIT",
+    "dependencies": {
+        "express": "^4.21.2"
+    },
+    "devDependencies": {
+        "nodemon": "^3.0.0"
+    }
+}
