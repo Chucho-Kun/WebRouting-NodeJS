@@ -2,12 +2,17 @@ import { dirname } from 'path';
 import { fileURLToPath } from 'url';
 import path from 'path';
 import hbs from 'hbs';
+import dotenv from 'dotenv';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 import express from 'express';
 const app = express();
+
+dotenv.config();
+const port = process.env.PORT;
+
 app.use('/images' , express.static(path.join(__dirname,'public/images')));
 app.use('/assets' , express.static(path.join(__dirname,'public/assets')));
 
@@ -38,4 +43,6 @@ app.get('/', (req, res) => {
 
   
 
-app.listen(8080)
+app.listen(port, ()=>{
+  console.log(`Corriendo en puerto: ${port}`);
+})
