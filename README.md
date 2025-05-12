@@ -20,3 +20,12 @@ La aplicación tabaja en local pero no se cargan estilo ni js con el siguiente m
 ```
 Refused to apply style from 'http://localhost:8080/assets/css/main.css' because its MIME type ('text/html') is not a supported stylesheet MIME type, and strict MIME checking is enabled.
 ```
+
+Solucion
+
+Se solicitan los recursos de la siguiente forma 
+
+```
+app.use('/images' , express.static(path.join(__dirname,'public/images')));
+app.use('/assets' , express.static(path.join(__dirname,'public/assets')));
+```

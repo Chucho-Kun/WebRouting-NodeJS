@@ -8,12 +8,12 @@ const __dirname = dirname(__filename);
 
 import express from 'express';
 const app = express();
+app.use('/images' , express.static(path.join(__dirname,'public/images')));
+app.use('/assets' , express.static(path.join(__dirname,'public/assets')));
 
 // Handlebars
-hbs.registerPartials(__dirname+'/views/partials', function(err){});
-
 app.set('view engine','hbs');
-app.use('/assets', express.static(path.join(__dirname, '/assets')));
+hbs.registerPartials(__dirname+'/views/partials', function(err){});
 
 const nombre = 'Jesus Peralta';
 const titulo = 'ServiceWeb-NodeJS';
@@ -30,8 +30,12 @@ app.get('/', (req, res) => {
     res.render('elements',{ nombre , titulo });
   })
 
+
   app.get('*', (req, res) => {
     res.sendFile( __dirname + '/public/404.html' );
+    console.log(__dirname);
   })
+
+  
 
 app.listen(8080)
