@@ -4,7 +4,7 @@
     "description": "Desarrollo de un WebServices en Node",
     "main": "index.js",
     "scripts": {
-        "start": "node index.js",
+        "start": "node app.js",
         "test": "echo \"Error: no se han definido pruebas\" && exit 1"
     },
     "keywords": [],
