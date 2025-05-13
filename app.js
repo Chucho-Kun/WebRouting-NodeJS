@@ -21,7 +21,7 @@ app.set('view engine','hbs');
 hbs.registerPartials(__dirname+'/views/partials', function(err){});
 
 const nombre = 'Jesus Peralta';
-const titulo = 'ServiceWeb-NodeJS';
+const titulo = 'WebRouting-NodeJS';
 
 app.get('/', (req, res) => {
     res.render('home',{ nombre , titulo });
