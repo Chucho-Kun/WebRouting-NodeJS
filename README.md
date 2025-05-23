@@ -2,6 +2,9 @@
 Website that shows the paths of each section without the file extension (friendly URLs)
 ## Technologies
 Node JS + Express + Handlebars
+## Deploy on Railway
+Website hosted on Railway's server
+[WebRouting-NodeJS](https://webrouting-nodejs-production.up.railway.app/)
 ## How to use
 ```
 npm install
@@ -10,7 +13,6 @@ npm run dev
 ## Developer notes 
 Express changes with its integration into ES6
 Express no longer works with __dirname in ES6 without first declaring it as
- 
 ```
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
